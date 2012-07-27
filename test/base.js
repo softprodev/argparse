@@ -55,13 +55,6 @@ describe('ArgumentParser', function () {
         /too few arguments/
       );
     });
-
-    it("should support positional args", function() {
-      parser.addArgument([ 'bar' ], { nargs: '+' });
-      args = parser.parseArgs([ '-f', 'foo', '--', '-f', 'bar' ]);
-      assert.equal(args.foo, 'foo');
-      assert.equal(args.bar.length, 2);
-    });
   });
 });
 

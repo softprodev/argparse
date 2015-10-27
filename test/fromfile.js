@@ -44,12 +44,12 @@ describe('from file', function () {
     args = parser.parseArgs(['X', '@recursive', 'Z', '-a', 'B']);
     assert.deepEqual(args, {a: 'B', x: 'X', y: ['hello world!', 'Z']});
   });
-  it('fest reading arguments from an invalid file', function () {
+  it('test reading arguments from an invalid file', function () {
     assert.throws(
       function () {
         args = parser.parseArgs(['@invalid']);
       },
-      /ENOENT, no such file or directory/
+      /ENOENT[:,] no such file or directory/
     );
   });
   it('test reading arguments from an missing file', function () {
@@ -57,7 +57,7 @@ describe('from file', function () {
       function () {
         args = parser.parseArgs(['@missing']);
       },
-      /ENOENT, no such file or directory/
+      /ENOENT[:,] no such file or directory/
     );
   });
   it('test custom convertArgLineToArgs function', function () {
